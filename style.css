@@ -63,9 +63,8 @@ body {
 }
 .titreCoord {
   position: relative;
-  /* min-width: 25vw; */
-  height: 50%;
-  left: 72%;
+  height: 55%;
+  left: 80%;
 }
 .titre {
   position: relative;
