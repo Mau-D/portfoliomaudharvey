@@ -16,6 +16,35 @@
     <link rel="icon" type="image/png" href="./images/favicon.png" />
     <!-- animation aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Parallaxe sur mobile -->
+    <script>
+        jQuery(document).ready(function ($) {
+            // Mobile device check
+            $is_mobile_device = null !== navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/);
+            if ($is_mobile_device) {
+                // Function to check if an element is in the Viewport
+                isInViewport = function (elem) {
+                    elementTop = elem.offset().top, elementBottom = elementTop + elem.outerHeight(), viewportTop = $(window).scrollTop(), viewportBottom = viewportTop + $(window).height();
+                    return elementBottom > viewportTop && elementTop < viewportBottom;
+                };
+                // Apply Parallax transform calculations when scrolling
+                $(window).scroll(function () {
+                    $(".et_parallax_bg").each(function () {
+                        var $this_parent = $(this).parent();
+                        // Check if the parent element is on-screen
+                        var $is_visible = isInViewport($this_parent);
+                        if ($is_visible) {
+                            element_top = $this_parent.offset().top,
+                                parallaxHeight = $(this).parent(".et_pb_fullscreen").length && $(window).height() > $this_parent.innerHeight() ? $(window).height() : $this_parent.innerHeight(),
+                                bg_height = .3 * $(window).height() + parallaxHeight,
+                                main_position = "translate(0, " + .3 * ($(window).scrollTop() + $(window).height() - element_top) + "px)";
+                            $(this).css({ height: bg_height, "-webkit-transform": main_position, "-moz-transform": main_position, "-ms-transform": main_position, transform: main_position });
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <!-- Intégralité de la page -->
@@ -87,7 +116,7 @@
                             <h1 class="align-self-center mx-auto">Pour me connaître...</h1>
                         </div>
                         <!-- Utiliser d-flex pour centrer verticalement et ajuster une hauteur100 pour le background transparent -->
-                        <div class="col-xs-12 col-md-6 transparenceBlanc d-flex p-0 alinea">
+                        <div class="col-xs-12 col-md-6 transparenceBlanc d-flex p-0">
                             <div class="container p-0">
                                 <div class="row m-0">
                                     <div class=" col-12 col-lg-5">
@@ -97,7 +126,7 @@
                                             je suis prête à mettre en oeuvre de vrais projets.
                                         </h4>
                                     </div>
-                                    <div class="col-12 col-lg-7">
+                                    <div class="col-12 col-lg-7 alinea">
                                         <p>
                                             Je suis comblée par ce nouveau métier, car j’étais à la recherche de la meilleure façon
                                             de créer en utilisant les
@@ -285,10 +314,12 @@
                                     <span>Mars<br> 2020</span>
                                 </div>
                                 <!-- Lien vers la page web -->
-                                <a class="cursorLien" target="_blank"
-                                    href="https://mau-d.github.io/AEC_Front_End/Integration1/ProjetFinal/">
-                                    <h2><span class="small">Intégration 1</span>Pleine Conscience</h2>
-                                </a>
+                                <div>
+                                    <a class="cursorLien" target="_blank"
+                                        href="https://mau-d.github.io/AEC_Front_End/Integration1/ProjetFinal/">
+                                        <h2><span class="small">Intégration 1</span>Pleine Conscience</h2>
+                                    </a>
+                                </div>
                             </div>
                             <div class="body">
                                 <h4>
@@ -314,10 +345,12 @@
                                     <span>Mars<br> 2020</span>
                                 </div>
                                 <!-- Lien vers la page web -->
-                                <a class="cursorLien" target="_blank"
-                                    href="https://mau-d.github.io/AEC_Front_End/Programmation1/ProjetFinalPhotociti/">
-                                    <h2><span class="small">Programmation 1</span>Photociti</h2>
-                                </a>
+                                <div>
+                                    <a class="cursorLien" target="_blank"
+                                        href="https://mau-d.github.io/AEC_Front_End/Programmation1/ProjetFinalPhotociti/">
+                                        <h2><span class="small">Programmation 1</span>Photociti</h2>
+                                    </a>
+                                </div>
                             </div>
                             <div class="body">
                                 <h4>
@@ -342,10 +375,12 @@
                                     <span>Sept<br> 2020</span>
                                 </div>
                                 <!-- Lien vers la page web -->
-                                <a class="cursorLien" target="_blank"
-                                    href="https://mau-d.github.io/AEC_Front_End/Programmation2/projetfinalreact/build/">
-                                    <h2><span class="small">Programmation 2</span>La trotteuse</h2>
-                                </a>
+                                <div>
+                                    <a class="cursorLien" target="_blank"
+                                        href="https://mau-d.github.io/AEC_Front_End/Programmation2/projetfinalreact/build/">
+                                        <h2><span class="small">Programmation 2</span>La trotteuse</h2>
+                                    </a>
+                                </div>
                             </div>
                             <div class="body">
                                 <h4>
@@ -370,9 +405,11 @@
                                     <span>Janv<br> 2021</span>
                                 </div>
                                 <!-- Lien vers la page web -->
-                                <a class="cursorLien" target="_blank" href="https://mau-d.github.io/1017examen2maudharvey/dist/">
-                                    <h2><span class="small">Interface utilisateur</span>Évaluation</h2>
-                                </a>
+                                <div>
+                                    <a class="cursorLien" target="_blank" href="https://mau-d.github.io/1017examen2maudharvey/dist/">
+                                        <h2><span class="small">Interface utilisateur</span>Évaluation</h2>
+                                    </a>
+                                </div>
                             </div>
                             <div class="body">
                                 <h4>
@@ -396,12 +433,14 @@
                                     <span>Mars<br> 2021</span>
                                 </div>
                                 <!-- Lien vers la page web -->
-                                <a class="cursorLien" target="_blank"
-                                    href="https://mau-d.github.io/AEC_Front_End/Programmation3/app-voyages-MaudHarvey/dist/">
-                                    <h2><span class="small">Programmation 3</span>Voyages Aventure</h2>
-                                </a>
+                                <div>
+                                    <a class="cursorLien" target="_blank"
+                                        href="https://mau-d.github.io/AEC_Front_End/Programmation3/app-voyages-MaudHarvey/dist/">
+                                        <h2><span class="small">Programmation 3</span>Voyages Aventure</h2>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="body">
+                            <div class="body M-0">
                                 <h4>
                                     Projet Angular<br>
                                     <span class="small">AngularTS, Angular Material</span>
@@ -426,15 +465,17 @@
                     <div class="row hauteur100 m-0">
                         <div class="col-6 bkVert d-flex p-0">
                             <div class=" p-1 p-sm-3 titreCoord bkRose bordureBlanc align-self-center">
-                                <h4 class="">Pour me contacter</h4><br>
-                                <h4>harveymaud@gmail.com</h4><br>
-                                <h4>(819)523-3737</h4><br>
-                                <a class="cvLien" href="./files/CV_MaudHarvey.pdf" target="_blank" download="CV_MaudHarvey.pdf">
-                                    <h6>Télécharger mon C.V.</h6>
-                                </a><br>
-                                <a href="https://www.linkedin.com/in/maud-harvey-70569159" target="_blank">
-                                    <i class="fab fa-3x fa-linkedin"></i>
-                                </a>
+                                <div class="h-100">
+                                    <h4 class="">Pour me contacter</h4><br>
+                                    <h4>harveymaud@gmail.com</h4><br>
+                                    <h4>(819)523-3737</h4><br>
+                                    <a class="cvLien" href="./files/CV_MaudHarvey.pdf" target="_blank" download="CV_MaudHarvey.pdf">
+                                        <h6>Télécharger mon C.V.</h6>
+                                    </a><br>
+                                    <a href="https://www.linkedin.com/in/maud-harvey-70569159" target="_blank">
+                                        <i class="fab fa-3x fa-linkedin"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-6 p-0">

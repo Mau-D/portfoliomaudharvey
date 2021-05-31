@@ -73,8 +73,7 @@ body {
 }
 .titreCoord {
   position: relative;
-  height: 60%;
-  left: 80%;
+  left: 70%;
 }
 .titre {
   position: relative;
@@ -93,9 +92,6 @@ body {
     height: 300px;
     width: 265px;
   }
-  .titreCoord {
-    height: 60%;
-  }
 }
 @media only screen and (max-width: 767px) {
   .photo {
@@ -105,9 +101,6 @@ body {
   .titre {
     height: 205px;
     width: 205px;
-  }
-  .titreCoord {
-    height: 72%;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -119,9 +112,6 @@ body {
   .titre {
     height: 170px;
     width: 170px;
-  }
-  .titreCoord {
-    height: 60%;
   }
 }
 @media only screen and (max-width: 415px) {
@@ -137,8 +127,8 @@ body {
     top: 100%;
   }
   .titreCoord {
-    left: 35%;
-    height: 300px;
+    left: 50%;
+    /* height: 300px; */
   }
 }
 /*section en transparence*/
@@ -164,9 +154,9 @@ body {
 }
 /* Pour le mansory de cards-columns section formations*/
 .card-columns .card {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 96%;
+  /* margin-left: auto;
+  margin-right: auto; */
+  max-width: 94%;
 }
 @media only screen and (min-width: 992px) {
   .card-columns {
@@ -244,23 +234,12 @@ p {
   font-family: Pattaya;
   font-size: 2.5rem;
 }
-@media (max-width: 1300px) {
-  h1 {
-    font-size: 1.3rem;
-  }
-  h4 {
-    font-size: 1rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-}
 @media (max-width: 767px) {
   h1 {
     font-size: 1.3rem;
   }
   h4 {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
   p {
     font-size: 1rem;
@@ -269,7 +248,7 @@ p {
 @media (max-width: 400px) {
   h4,
   h2 {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 }
 /* Alinéa au début de chaque paragraphe */
@@ -377,7 +356,7 @@ p {
 }
 @media (max-width: 480px) {
   #timeline .demo-card-wrapper {
-    width: 350px;
+    width: 315px;
     margin: 0;
   }
 }
@@ -474,7 +453,7 @@ p {
 #timeline .demo-card .head .number-box {
   display: inline;
   float: left;
-  margin: 8px;
+  /* margin: 8px; */
   padding: 8px;
   font-size: 30px;
   line-height: 20px;
@@ -488,7 +467,7 @@ p {
   font-weight: inherit;
   letter-spacing: 2px;
   margin: 0;
-  padding-bottom: 6px;
+  padding: 6px;
   line-height: 1rem;
 }
 @media (min-width: 480px) {
