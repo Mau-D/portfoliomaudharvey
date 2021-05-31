@@ -2,10 +2,10 @@
 /* Maud Harvey */
 /* style pour la page index.html */
 /* Code pour visualiser les éléments pour régulariser les margin et padding */
-* {
+/* * {
   outline: 1px red solid !important;
   visibility: visible !important;
-}
+} */
 /* Fonts */
 @font-face {
   font-family: PTSerif-Regular;
