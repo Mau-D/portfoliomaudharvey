@@ -2,10 +2,10 @@
 /* Maud Harvey */
 /* style pour la page index.html */
 /* Code pour visualiser les éléments pour régulariser les margin et padding */
-/* * {
+* {
   outline: 1px red solid !important;
   visibility: visible !important;
-} */
+}
 /* Fonts */
 @font-face {
   font-family: PTSerif-Regular;
@@ -15,9 +15,12 @@
   font-family: PTSerif-Italic;
   src: url(./fonts/PT_Serif/PTSerif-Italic.ttf);
 }
+@font-face {
+  font-family: Pattaya;
+  src: url(./fonts/Pattaya/Pattaya-Regular.ttf);
+}
 body {
   font-family: PTSerif-Regular;
-  max-height: 100%;
 }
 
 /* Hauteurs viewport */
@@ -180,8 +183,12 @@ body {
 .cvLien {
   color: black !important;
 }
+.cvLien h6 {
+  font-size: 0.8rem;
+}
 .cursorLien {
-  margin: 2%;
+  width: auto;
+  margin: 5%;
   cursor: pointer;
   color: white !important;
 }
@@ -201,8 +208,11 @@ body {
 }
 /* font size responsive */
 h1 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-family: PTSerif-Italic;
+}
+h1 strong {
+  font-family: Pattaya;
 }
 h4 {
   font-size: 1.5rem;
@@ -219,7 +229,7 @@ p {
 }
 /* menu-logo */
 .navbar-brand span {
-  font-family: forte;
+  font-family: Pattaya;
   font-size: 2.5rem;
 }
 @media (max-width: 767px) {
@@ -248,7 +258,7 @@ p {
 .bkgDegrade {
   background-image: linear-gradient(
     rgba(255, 255, 255, 1) 40%,
-    rgba(255, 0, 0, 0)
+    rgba(0, 0, 0, 0)
   );
 }
 /************Ligne du temps*************/
@@ -324,7 +334,7 @@ p {
 }
 #timeline p.leader {
   text-align: center;
-  max-width: 90%;
+  /* max-width: 90%; */
   margin: auto;
   margin-bottom: 45px;
 }
@@ -342,6 +352,11 @@ p {
     margin: 0 auto;
   }
 }
+/* @media (max-width: 480px) {
+  #timeline .demo-card-wrapper {
+    width: 99%;
+  }
+} */
 #timeline .demo-card-wrapper::after {
   z-index: 1;
   content: '';
@@ -363,16 +378,27 @@ p {
   max-width: 94%;
   z-index: 2;
 }
-@media (min-width: 480px) {
+
+@media (max-width: 480px) {
   #timeline .demo-card {
-    max-width: 100%;
+    max-width: 99%;
     box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
   }
 }
-
+@media (min-width: 480px) {
+  #timeline .demo-card {
+    max-width: 99%;
+    box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
+  }
+}
+@media (max-width: 720px) {
+  #timeline .demo-card {
+    max-width: 60%;
+  }
+}
 @media (min-width: 720px) {
   #timeline .demo-card {
-    max-width: 40%;
+    max-width: 60%;
   }
 }
 @media (min-width: 1000px) {
@@ -412,21 +438,21 @@ p {
     margin-top: 180px;
   }
 }
+
 #timeline .demo-card .head {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: start;
   color: #fff;
   font-weight: 400;
 }
 #timeline .demo-card .head .number-box {
-  /* width: 100%; */
   display: inline;
   float: left;
   margin: 8px;
   padding: 8px;
   font-size: 30px;
-  line-height: 35px;
+  line-height: 20px;
   font-weight: 600;
   background: rgba(0, 0, 0, 0.17);
 }
@@ -442,20 +468,28 @@ p {
 }
 @media (min-width: 480px) {
   #timeline .demo-card .head h2 {
-    font-size: 150%;
+    font-size: 1rem;
     line-height: 1.2rem;
   }
 }
 @media (max-width: 480px) {
   #timeline .demo-card .head h2 {
     font-size: 0.8rem;
-    line-height: 1.2rem;
+    line-height: 2;
   }
 }
 #timeline .demo-card .head h2 span {
   display: block;
   font-size: 0.6rem;
   margin: 0;
+}
+#timeline .demo-card .head span {
+  font-size: 1.5rem;
+}
+@media (max-width: 480px) {
+  #timeline .demo-card .head span {
+    font-size: 0.8rem;
+  }
 }
 @media (min-width: 480px) {
   #timeline .demo-card .head h2 span {
@@ -471,7 +505,7 @@ p {
 @media (min-width: 1000px) {
   #timeline .demo-card .body {
     /* height: 316px; */
-    height: 80%;
+    height: 81.3%;
   }
 }
 #timeline .demo-card .body p {
