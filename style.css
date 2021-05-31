@@ -144,7 +144,7 @@ body {
   background-attachment: fixed; /*Pour l'effet*/
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 /* Bordure blanche */
 .bordureBlanc {
@@ -258,7 +258,7 @@ p {
 .bkgDegrade {
   background-image: linear-gradient(
     rgba(255, 255, 255, 1) 40%,
-    rgba(0, 0, 0, 0)
+    rgba(255, 255, 255, 0)
   );
 }
 /************Ligne du temps*************/
@@ -352,11 +352,7 @@ p {
     margin: 0 auto;
   }
 }
-/* @media (max-width: 480px) {
-  #timeline .demo-card-wrapper {
-    width: 99%;
-  }
-} */
+
 #timeline .demo-card-wrapper::after {
   z-index: 1;
   content: '';
@@ -515,7 +511,7 @@ p {
 }
 #timeline .demo-card .body img {
   display: block;
-  width: 100%;
+  /* width: 100%; */
 }
 #timeline .demo-card--step1 {
   background-color: #b6c4a3;
