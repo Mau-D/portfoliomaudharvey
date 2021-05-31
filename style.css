@@ -38,11 +38,19 @@ body {
   min-height: 50vh;
 }
 .hauteur100 {
-  min-height: 100vh;
+  min-height: 120vh;
+}
+.bkgImage {
+  background-image: url('./images/desk.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /* Image en background, contact */
 .bkgImage {
+  height: 100%;
   background-image: url('./images/desk.jpg');
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -83,7 +91,7 @@ body {
     left: 58%;
   }
   .titre {
-    height: 265px;
+    height: 300px;
     width: 265px;
   }
   .titreCoord {
@@ -138,14 +146,19 @@ body {
 .transparenceBlanc {
   background-color: rgba(255, 255, 255, 0.9);
 }
+/* hauteur minimum pour le parallaxe */
+.titreApropos {
+  min-height: 50vh;
+}
 /*section en parallaxe*/
 .parallaxe {
   background-image: url('./images/desk.jpg');
   background-attachment: fixed; /*Pour l'effet*/
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
+
 /* Bordure blanche */
 .bordureBlanc {
   border: 7px solid white;
@@ -215,14 +228,14 @@ h1 strong {
   font-family: Pattaya;
 }
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: PTSerif-Italic;
 }
 #apropos h4 {
   line-height: 1.6;
 }
 p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 #apropos strong {
   color: #e39971;
@@ -232,12 +245,23 @@ p {
   font-family: Pattaya;
   font-size: 2.5rem;
 }
-@media (max-width: 767px) {
+@media (max-width: 1300px) {
   h1 {
     font-size: 1.3rem;
   }
   h4 {
     font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+  h4 {
+    font-size: 0.8rem;
   }
   p {
     font-size: 1rem;
@@ -260,6 +284,11 @@ p {
     rgba(255, 255, 255, 1) 40%,
     rgba(255, 255, 255, 0)
   );
+}
+/* Couleur du lien linkedIn, contact */
+.fa-linkedin,
+.fa-github {
+  color: black;
 }
 /************Ligne du temps*************/
 /* Media Queries */
@@ -317,11 +346,6 @@ p {
 * {
   box-sizing: border-box;
 }
-/* Couleur du lien linkedIn, contact */
-.fa-linkedin,
-.fa-github {
-  color: black;
-}
 
 #timeline {
   padding: 100px 0;
@@ -352,6 +376,12 @@ p {
     margin: 0 auto;
   }
 }
+@media (max-width: 480px) {
+  #timeline .demo-card-wrapper {
+    width: 350px;
+    margin: 0;
+  }
+}
 
 #timeline .demo-card-wrapper::after {
   z-index: 1;
@@ -377,7 +407,7 @@ p {
 
 @media (max-width: 480px) {
   #timeline .demo-card {
-    max-width: 99%;
+    max-width: 95%;
     box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
   }
 }
@@ -482,16 +512,13 @@ p {
 #timeline .demo-card .head span {
   font-size: 1.5rem;
 }
-@media (max-width: 480px) {
-  #timeline .demo-card .head span {
-    font-size: 0.8rem;
-  }
-}
+
 @media (min-width: 480px) {
   #timeline .demo-card .head h2 span {
     font-size: 0.8rem;
   }
 }
+
 #timeline .demo-card .body {
   background: #fff;
   border: 1px solid rgba(191, 191, 191, 0.4);
