@@ -21,6 +21,10 @@
 }
 body {
   font-family: PTSerif-Regular;
+  overflow-x: hidden;
+}
+html {
+  width: 100%;
 }
 
 /* Hauteurs viewport */
@@ -55,11 +59,11 @@ body {
   background-size: cover;
 }
 
-@media only screen and (max-height: 400px) {
+/* @media only screen and (max-height: 400px) {
   .hauteur100 {
     min-height: 110vh;
   }
-}
+} */
 /*Photo de la bannière*/
 /*Titre de la bannière et texte contact*/
 /*hauteur et largeur , superposition , décalage*/
@@ -70,10 +74,12 @@ body {
   height: 480px;
   width: 320px;
   left: 72%;
+  border: 8px solid white;
 }
 .titreCoord {
   position: relative;
   left: 85%;
+  border: 8px solid white;
 }
 .titre {
   position: relative;
@@ -81,6 +87,7 @@ body {
   z-index: 2;
   height: 320px;
   width: 320px;
+  border: 8px solid white;
 }
 @media only screen and (max-width: 992px) {
   .photo {
@@ -163,6 +170,9 @@ body {
   margin-right: auto;
   max-width: 94%;
 }
+.card-columns {
+  margin: auto;
+}
 @media only screen and (min-width: 992px) {
   .card-columns {
     column-count: 4;
@@ -224,6 +234,9 @@ h4 {
   font-size: 1.6rem;
   font-family: PTSerif-Italic;
 }
+.card-title {
+  font-size: 1.2rem;
+}
 #apropos h4 {
   line-height: 1.6;
 }
@@ -245,6 +258,9 @@ p {
   h4 {
     font-size: 1.2rem;
   }
+  h5 {
+    font-size: 1rem;
+  }
   p {
     font-size: 1rem;
   }
@@ -253,6 +269,9 @@ p {
   h4,
   h2 {
     font-size: 1rem;
+  }
+  h5 {
+    font-size: 0.8rem;
   }
   h2 .small {
     font-size: 0.6rem;
@@ -361,6 +380,7 @@ p {
     margin: 0 auto;
   }
 }
+
 /* @media (max-width: 345px) {
   #timeline .demo-card-wrapper h2 {
     width: 115px;
@@ -430,7 +450,7 @@ p {
   #timeline .demo-card:nth-child(odd) .head::after {
     border-left-width: 15px;
     border-left-style: solid;
-    /* left: 100%; */
+    left: 100%;
   }
   #timeline .demo-card:nth-child(odd) .head::before {
     left: 391.5px;
